@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "topology_id": "tunisia_macro_v1",
+    "schema_version": "1.0"
+  },
+  "areas" : {
+    "nodes": {
+
+        "sources": 
+            [
+                {
+                    "id": "macro_gen_01",
+                    "type": "generator",
+                    "rated_power_mw": 200,
+                    "voltage_level_kv": 100,
+                    "generator_type": "gas"
+                },
+                {
+                    "id": "macro_gen_02",
+                    "type": "generator",
+                    "rated_power_mw": 200,
+                    "voltage_level_kv": 10,
+                    "generator_type": "hydro"
+                }
+            ],
+    rated_power_mw : float
+    energy_capacity_mwh : float
+    nominal_voltage_kv : float
+    storage_type : Literal[
+        "battery", "pumped_hydro"
+    ]
+        "storage" : [
+            {
+                "id": "macro_stor_01",
+                "type": "storage",
+                "rated_power_mw": 200,
+                "voltage_level_kv": 10,
+                "generator_type": "hydro"
+            }
+        ],
+        "transformers" : [],
+        "substations" : [],
+        "loads" : [],
+        "buses" : [],
+        "circuit_breaker" : []
+        }
+    }
+        {
+            "id": "macro_gen_01",
+            "type": "generator",
+            "rated_power_mw": 200,
+            "voltage_level_kv": 100,
+            "generator_type": "gas"
+        },
+        {
+            "id": "macro_gen_01",
+            "type": "generator",
+            "rated_power_mw": 200,
+            "voltage_level_kv": 100,
+            "generator_type": "gas"
+        }
+        
+        {
+            "id": "macro_cb_01",
+            "type": "circuit_breaker",
+            "voltage_level_kv": 20,
+            "rated_current_a": 2000,
+            "rated_breaking_capacity_ka": 40,
+            "is_open": false,
+            "is_gateway": false
+        },
+        {
+            "id": "macro_bus_01",
+            "type": "bus",
+            "voltage_level_kv": 20
+        } 
+    ],
+    "edges": [
+        ["macro_gen_01", "macro_cb_01"],
+        ["macro_cb_01", "macro_bus_01"]
+  }
+  }
+    
+}

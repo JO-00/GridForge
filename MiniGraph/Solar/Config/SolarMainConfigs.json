@@ -1,0 +1,34 @@
+{
+    "sampling_frequency" : 1000,
+    "n_pv_strings" : 4,
+
+    "n_pv_module_per_pv_string" : 10,
+
+    "dc_combiner" : {
+        "enabled": true,
+        "string_fuses_enabled": true,
+        "surge_protection_enabled": true,
+        "threshold_surge_SPD_voltage" : 460,
+        "clamp_SPD_voltage" : 450,
+        
+        "string_fuse": {
+            "manufacturer": "Eaton Bussmann",
+            "model": "PV-20A10-1P",
+            "rated_current_a": 20.0,
+            "rated_voltage_vdc": 1000.0,
+            "pre_arcing_i2t_a2s": 34.0,
+            "rated_power_loss_w": 3.6,
+            "interrupt_rating_a": 50000,
+            "cooling_time_constant_s" : 30
+        }
+    },
+
+    "mppt_config" : {
+        "algorithm": "perturb_and_observe",
+        "update_period_s": 0.1,
+        "min_voltage_v": 30,
+        "max_voltage_v": 10000,
+        "initial_voltage_v" : 450,
+        "voltage_step_v" : 0.5
+    }
+}

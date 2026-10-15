@@ -1,0 +1,24 @@
+# Read the actual operating state.
+measurement = dc_combiner.measure()
+
+# Choose the desired PV operating voltage.
+target_voltage_v = mppt.step(
+    measured_voltage_v=measurement.voltage_v,
+    measured_power_w=measurement.power_w,
+)
+
+# Translate the target into a converter command.
+duty_cycle = voltage_controller.step(
+    target_voltage_v=target_voltage_v,
+    measured_voltage_v=measurement.voltage_v,
+)
+
+# Advance the physical model by one simulation timestep.
+converter.step(
+    duty_cycle=duty_cycle,
+    pv_array=pv_array,
+    dt_s=dt_s,
+)
+
+# Recalculate actual measurements after the state update.
+measurement = dc_combiner.measure()

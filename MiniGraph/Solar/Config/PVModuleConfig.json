@@ -1,0 +1,27 @@
+
+{
+    "model": "single_diode",
+    "rated_power_wp": 500,
+    "voc_ref_v": 59.12,
+    "isc_a": 10.44,
+    "series_cells": 72,
+    "init_v" : 30,
+    "diode_model": {
+        "reference_irradiance_w_m2": 1000.0,
+        "alpha_isc_per_c": 0.0005,
+        "reference_cell_temperature_c": 25.0,
+        "saturation_current_a": 1e-12,
+        "series_resistance_ohm": 0.301240281,
+        "shunt_resistance_ohm": 100000.0,
+        "ideality_factor": 1.066100362,
+        "saturation_current_a_old": 1e-10,
+        "series_resistance_ohm_old": 0.25,
+        "shunt_resistance_ohm_old": 300.0,
+        "ideality_factor_old": 1.2
+    },
+    "efficiency" : 0.196,
+    "tolerance" : 0.03,
+    "voc_max" : 1000,
+    "vmp_ref" : 48.6,
+    "imp_ref" : 10.29
+}
