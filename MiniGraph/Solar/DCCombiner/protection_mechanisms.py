@@ -1,7 +1,8 @@
 
-from dataclasses import dataclass
+from dataclasses import dataclass,field
 from enum import Enum, auto
 import json
+from Sensors.sensor import Sensor
 
 
 @dataclass
@@ -20,8 +21,10 @@ class SPDState(Enum):
 class SurgeProtectionDevice:
     clamp_SPD_voltage : float
     surge_threshold_v: float
+    sensors : list[Sensor] = field(default_factory=list)
     state: SPDState = SPDState.HEALTHY
     surge_events: int = 0
+    
 
     def __post_init__(self) -> None:
         if self.surge_threshold_v <= 0:
@@ -44,3 +47,4 @@ class SurgeProtectionDevice:
 
     def replace(self) -> None:
         self.state = SPDState.HEALTHY
+

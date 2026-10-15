@@ -13,11 +13,7 @@
         "saturation_current_a": 1e-12,
         "series_resistance_ohm": 0.301240281,
         "shunt_resistance_ohm": 100000.0,
-        "ideality_factor": 1.066100362,
-        "saturation_current_a_old": 1e-10,
-        "series_resistance_ohm_old": 0.25,
-        "shunt_resistance_ohm_old": 300.0,
-        "ideality_factor_old": 1.2
+        "ideality_factor": 1.066100362
     },
     "efficiency" : 0.196,
     "tolerance" : 0.03,

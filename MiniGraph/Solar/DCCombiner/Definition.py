@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 import math,json
 from PVModules.PVArray import PVString , PVArray, SAMPLING_FREQUENCY
-from protection_mechanisms import SurgeProtectionDevice, DCBusbar, SPDState
+from DCCombiner.protection_mechanisms import SurgeProtectionDevice, DCBusbar, SPDState
 from DCCombiner.mppt import MPPTController
 
 

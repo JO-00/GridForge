@@ -9,10 +9,10 @@ from PRNG import cloudy, summer
 def main():
     pv_array = PVArray()
     dc_combiner = DCCombiner(pv_array)
-    time_h, irradiance, cell_temperature = (curve for curve in cloudy.generate_solar_curves(
+    time_h, irradiance, cell_temperature = cloudy.generate_solar_curves(
             cloudiness=1,
             seed=42,
-        ))
+        )
     
     power , dc_combiner_current , dc_combiner_voltage = [] ,  [], []
     for irradiance_t, cell_temperature_t in zip(irradiance, cell_temperature):
@@ -43,7 +43,6 @@ def main():
     plt.plot(time_h,dc_combiner_voltage)
     plt.xlabel("time")
     plt.ylabel("dc voltage(t)")
-    plt.ylim(200, 500)
     plt.show()
     plt.plot(dc_combiner_voltage,power)
     plt.xlabel("voltage")
